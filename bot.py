@@ -18,14 +18,12 @@ client = TelegramClient('client', api_id, api_hash).start(bot_token=bot_token)
 anlik_calisan = []
 
 @client.on(events.NewMessage(pattern='^(?i)/bitir'))
-@authorized_users_only
 async def cancel(event):
   global anlik_calisan
   anlik_calisan.remove(event.chat_id)
 
 
 @client.on(events.NewMessage(pattern="^/start$"))
-@authorized_users_only
 async def start(event):
   await event.reply("**Etiketleme Botu**, Grup veya kanaldaki neredeyse tüm üyelerden bahsedebilir ★\nDaha fazla bilgi için **/help**'i tıklayın.",
                     buttons=(
