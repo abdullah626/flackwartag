@@ -36,7 +36,7 @@ async def start(event):
 @client.on(events.NewMessage(pattern="^/help$"))
 async def help(event):
   helptext = """**UtagOnline Tag Bot'un Yardım Menüsü**\n\nKomut: /all \n  Bu komutu, başkalarına bahsetmek istediğiniz metinle birlikte kullanabilirsiniz. \n`Örnek: /all Günaydın!`  \nBu komutu yanıt olarak kullanabilirsiniz. herhangi bir mesaj Bot, yanıtlanan iletiye kullanıcıları etiketleyerek ve /bitir yazarak etiketleme işlemi biter.
-\nAdminleri etiketlemek için ise /adminall \n komutunu kullanabilirsiniz sevgiler"""
+\nAdminleri etiketlemek için ise /admin \n komutunu kullanabilirsiniz sevgiler"""
   await event.reply(helptext,
                     buttons=(
                       [Button.url('🌟 Beni Bir Gruba Ekle', 'https://t.me/UtagOnline_bot?startgroup=a'),
