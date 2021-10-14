@@ -27,9 +27,9 @@ async def cancel(event):
 async def start(event):
   await event.reply("**Etiketleme Botu**, Grup veya kanaldaki neredeyse tüm üyelerden bahsedebilir ★\nDaha fazla bilgi için **/help**'i tıklayın.",
                     buttons=(
-                      [Button.url('🌟 Beni Bir Gruba Ekle', 'https://t.me/Usertagtrbot?startgroup=a'),
-                      Button.url('Sohbet Grubumuz', 'https://t.me/sohbetimarane'),
-                      Button.url('👮‍♂️ Sahibim', 'https://t.me/serkansimsekkk')]
+                      [Button.url('🌟 Beni Bir Gruba Ekle', 'https://t.me/UtagOnline_bot?startgroup=a'),
+                      Button.url('music botu', 'https://t.me/esmermusic_bot'),
+                      Button.url('👮‍♂️ Sahibim', 'https://t.me/baykaoss')]
                     ),
                     link_preview=False
                    )
@@ -38,9 +38,9 @@ async def help(event):
   helptext = "**Flackwar Tag Bot'un Yardım Menüsü**\n\nKomut: /all \n  Bu komutu, başkalarına bahsetmek istediğiniz metinle birlikte kullanabilirsiniz. \n`Örnek: /all Günaydın!`  \nBu komutu yanıt olarak kullanabilirsiniz. herhangi bir mesaj Bot, yanıtlanan iletiye kullanıcıları etiketleyerek ve /bitir yazarak etiketleme işlemi biter. 🤗"
   await event.reply(helptext,
                     buttons=(
-                      [Button.url('🌟 Beni Bir Gruba Ekle', 'https://t.me/Usertagtrbot?startgroup=a'),
-                       Button.url('📣 Support', 'https://t.me/usertgtr'),
-                      Button.url('👮‍♂️ Sahibim', 'https://t.me/serkansimsekkk')]
+                      [Button.url('🌟 Beni Bir Gruba Ekle', 'https://t.me/UtagOnline_bot?startgroup=a'),
+                       Button.url('📣 kanal', 'https://t.me/UtagOnline'),
+                      Button.url('👮‍♂️ Sahibim', 'https://t.me/baykaoss')]
                     ),
                     link_preview=False
                    )
