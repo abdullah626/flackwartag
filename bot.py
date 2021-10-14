@@ -48,7 +48,6 @@ async def help(event):
 
 
 @client.on(events.NewMessage(pattern="^/all ?(.*)"))
-@authorized_users_only
 async def mentionall(event):
   global anlik_calisan
   if event.is_private:
