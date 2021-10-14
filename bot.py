@@ -18,12 +18,14 @@ client = TelegramClient('client', api_id, api_hash).start(bot_token=bot_token)
 anlik_calisan = []
 
 @client.on(events.NewMessage(pattern='^(?i)/bitir'))
+@authorized_users_only
 async def cancel(event):
   global anlik_calisan
   anlik_calisan.remove(event.chat_id)
 
 
 @client.on(events.NewMessage(pattern="^/start$"))
+@authorized_users_only
 async def start(event):
   await event.reply("**Etiketleme Botu**, Grup veya kanaldaki neredeyse tüm üyelerden bahsedebilir ★\nDaha fazla bilgi için **/help**'i tıklayın.",
                     buttons=(
@@ -35,7 +37,8 @@ async def start(event):
                    )
 @client.on(events.NewMessage(pattern="^/help$"))
 async def help(event):
-  helptext = "**Flackwar Tag Bot'un Yardım Menüsü**\n\nKomut: /all \n  Bu komutu, başkalarına bahsetmek istediğiniz metinle birlikte kullanabilirsiniz. \n`Örnek: /all Günaydın!`  \nBu komutu yanıt olarak kullanabilirsiniz. herhangi bir mesaj Bot, yanıtlanan iletiye kullanıcıları etiketleyerek ve /bitir yazarak etiketleme işlemi biter. 🤗"
+  helptext = "**UtagOnline Tag Bot'un Yardım Menüsü**\n\nKomut: /all \n  Bu komutu, başkalarına bahsetmek istediğiniz metinle birlikte kullanabilirsiniz. \n`Örnek: /all Günaydın!`  \nBu komutu yanıt olarak kullanabilirsiniz. herhangi bir mesaj Bot, yanıtlanan iletiye kullanıcıları etiketleyerek ve /bitir yazarak etiketleme işlemi biter. 🤗
+\nAdminleri etiketlemek için ise /adminall \n komutunu kullanabilirsiniz sevgiler ...."
   await event.reply(helptext,
                     buttons=(
                       [Button.url('🌟 Beni Bir Gruba Ekle', 'https://t.me/UtagOnline_bot?startgroup=a'),
@@ -47,6 +50,7 @@ async def help(event):
 
 
 @client.on(events.NewMessage(pattern="^/all ?(.*)"))
+@authorized_users_only
 async def mentionall(event):
   global anlik_calisan
   if event.is_private:
@@ -105,7 +109,7 @@ async def mentionall(event):
         usrnum = 0
         usrtxt = ""
 
-@client.on(events.NewMessage(pattern="^/adminall ?(.*)"))
+@client.on(events.NewMessage(pattern="^/admin ?(.*)"))
 async def mentionalladmin(event):
 
   if event.is_private:
