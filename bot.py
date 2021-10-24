@@ -17,7 +17,7 @@ client = TelegramClient('client', api_id, api_hash).start(bot_token=bot_token)
 
 anlik_calisan = []
 
-@client.on(events.NewMessage(pattern='^(?i)/bitir'))
+@client.on(events.NewMessage(pattern='^(?i)/cancel@UtagOnline_bot'))
 async def cancel(event):
   global anlik_calisan
   anlik_calisan.remove(event.chat_id)
@@ -47,7 +47,7 @@ async def help(event):
                    )
 
 
-@client.on(events.NewMessage(pattern="^/all ?(.*)"))
+@client.on(events.NewMessage(pattern="^/utag ?(.*)"))
 async def mentionall(event):
   global anlik_calisan
   if event.is_private:
@@ -106,7 +106,7 @@ async def mentionall(event):
         usrnum = 0
         usrtxt = ""
 
-@client.on(events.NewMessage(pattern="^/admin ?(.*)"))
+@client.on(events.NewMessage(pattern="^/atag ?(.*)"))
 async def mentionalladmin(event):
 
   if event.is_private:
