@@ -149,5 +149,5 @@ async def mentionalladmin(event):
     return await event.respond("__Bu komut gruplarda ve kanallarda kullanılabilir.!__")
   
 
-print(">> Bot çalıyor merak etme 👮‍♂️ @uye_ekleme_hizmeti bilgi alabilirsin <<")
+print(">> Bot çalıyor merak etme 👮‍♂️ @baykaoss bilgi alabilirsin <<")
 client.run_until_disconnected()
