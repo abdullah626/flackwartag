@@ -23,31 +23,6 @@ async def cancel(event):
   anlik_calisan.remove(event.chat_id)
 
 
-@client.on(events.NewMessage(pattern="^/start$"))
-async def start(event):
-  await event.reply("**Etiketleme Botu**, Grup veya kanaldaki neredeyse tüm üyelerden bahsedebilir ★\nDaha fazla bilgi için **/help**'i tıklayın.",
-                    buttons=(
-                      [Button.url('🌟 Beni Bir Gruba Ekle', 'https://t.me/UtagOnlinebot?startgroup=a'),
-                      Button.url('music botu', 'https://t.me/Onlineemusicbot'),
-                      Button.url('📣 Kanal', 'https://t.me/uye_ekleme_hizmeti'),
-                      Button.url('👮‍♂️ Sahibim', 'https://t.me/Ruhsuzzadaam')]
-                    ),
-                    link_preview=False
-                   )
-@client.on(events.NewMessage(pattern="^/help$"))
-async def help(event):
-  helptext = """**UtagOnline Tag Bot'un Yardım Menüsü**\n\nKomut: /utag \n  Bu komutu, başkalarına bahsetmek istediğiniz metinle birlikte kullanabilirsiniz. \n`Örnek: /utag Günaydın!`  \nBu komutu yanıt olarak kullanabilirsiniz. herhangi bir mesaj Bot, yanıtlanan iletiye kullanıcıları etiketleyerek ve /cancel yazarak etiketleme işlemi biter.
-\nAdminleri etiketlemek için ise /atag \n komutunu kullanabilirsiniz sevgiler"""
-  await event.reply(helptext,
-                    buttons=(
-                      [Button.url('🌟 Beni Bir Gruba Ekle', 'https://t.me/UtagOnlinebot?startgroup=a'),
-                       Button.url('📣 kanal', 'https://t.me/uye_ekleme_hizmeti'),
-                      Button.url('👮‍♂️ Sahibim', 'https://t.me/Ruhsuzzadaam')]
-                    ),
-                    link_preview=False
-                   )
-
-
 @client.on(events.NewMessage(pattern="^/utag ?(.*)"))
 async def mentionall(event):
   global anlik_calisan
