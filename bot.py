@@ -25,13 +25,13 @@ async def cancel(event):
 
 @client.on(events.NewMessage(pattern="^/start$"))
 async def start(event):
-  await event.reply("Hi I'm @UserrTaggerBot I was created to search all contacts in chat.\nMerhaba! Grubunuzdaki Kullanıcıları Etiketlemek İçin Yaratıldım. Beni Grubunuza Ekleyin ve Gerisini Bana Bırakın.",
+  await event.reply("Hi I'm @UtagOnlineBot I was created to search all contacts in chat.\nMerhaba! Grubunuzdaki Kullanıcıları Etiketlemek İçin Yaratıldım. Beni Grubunuza Ekleyin ve Gerisini Bana Bırakın.",
                     buttons=(
-                      [Button.url('➕Beni Bir Gruba Ekle➕', 'http://t.me/UtagOnlineBot?startgroup=a'),
-                       Button.url('🔥Grup', 'https://t.me/sohbet_onlinee'),
-                       Button.url('🔥sahip ', 'https://t.me/Ruhsuzzadaam'),
-                       Button.url('🔥Music botu ', 'https://t.me/onlineemusicbot'),
-                      Button.url('📣resmi kanal', 'https://t.me/uye_ekleme_hizmeti')]
+                      [Button.url('➕Beni Bir Gruba Ekle➕', 'http://t.me/UtagOnlineBot?startgroup=a'),],
+                      [ Button.url('🔥Grup', 'https://t.me/sohbet_onlinee'),],
+                      [ Button.url('🔥sahip ', 'https://t.me/Ruhsuzzadaam'),],
+                      [  Button.url('🔥Music botu ', 'https://t.me/onlineemusicbot'),],
+                     [ Button.url('📣resmi kanal', 'https://t.me/uye_ekleme_hizmeti')]
                     ),
                     link_preview=False
                    )
@@ -41,7 +41,7 @@ async def help(event):
 
 /utag <Mesajınız> - kullanıcıları etiketlerim.
 /atag <Mesajınız> - Sadece yöneticileri etiketlerim.
-/cancel@UserrTaggerBot - Etiket işlemini iptal ederim.
+/cancel@UtagOnlineBot - Etiket işlemini iptal ederim.
 ❕ Yalnızca yöneticileri bu komutları kullanabilir."""
   await event.reply(helptext,
                     buttons=(
