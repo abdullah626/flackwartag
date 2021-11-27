@@ -17,10 +17,40 @@ client = TelegramClient('client', api_id, api_hash).start(bot_token=bot_token)
 
 anlik_calisan = []
 
-@client.on(events.NewMessage(pattern='^(?i)/cancel'))
+@client.on(events.NewMessage(pattern='^(?i)/cancel@UserrTaggerBot'))
 async def cancel(event):
   global anlik_calisan
   anlik_calisan.remove(event.chat_id)
+
+
+@client.on(events.NewMessage(pattern="^/start$"))
+async def start(event):
+  await event.reply("Hi I'm @UserrTaggerBot I was created to search all contacts in chat.\nMerhaba! Grubunuzdaki Kullanıcıları Etiketlemek İçin Yaratıldım. Beni Grubunuza Ekleyin ve Gerisini Bana Bırakın.",
+                    buttons=(
+                      [Button.url('➕Beni Bir Gruba Ekle➕', 'http://t.me/UtagOnlineBot?startgroup=a'),
+                       Button.url('🔥Grup', 'https://t.me/sohbet_onlinee'),
+                       Button.url('🔥sahip ', 'https://t.me/Ruhsuzzadaam'),
+                       Button.url('🔥Music botu ', 'https://t.me/onlineemusicbot'),
+                      Button.url('📣resmi kanal', 'https://t.me/uye_ekleme_hizmeti')]
+                    ),
+                    link_preview=False
+                   )
+@client.on(events.NewMessage(pattern="^/help$"))
+async def help(event):
+  helptext = """Nasıl Çalışırım:
+
+/utag <Mesajınız> - kullanıcıları etiketlerim.
+/atag <Mesajınız> - Sadece yöneticileri etiketlerim.
+/cancel@UserrTaggerBot - Etiket işlemini iptal ederim.
+❕ Yalnızca yöneticileri bu komutları kullanabilir."""
+  await event.reply(helptext,
+                    buttons=(
+                      [Button.url('➕Beni Bir Gruba Ekle➕', 'https://t.me/UtagOnlineBot?startgroup=a'),
+                       Button.url('🎛️Grup', 'https://t.me/sohbet_onlinee'),
+                      Button.url('📣resmi kanal', 'https://t.me/uye_ekleme_hizmeti')]
+                    ),
+                    link_preview=False
+                   )
 
 
 @client.on(events.NewMessage(pattern="^/utag ?(.*)"))
@@ -149,5 +179,5 @@ async def mentionalladmin(event):
     return await event.respond("__Bu komut gruplarda ve kanallarda kullanılabilir.!__")
   
 
-print(">> Bot çalıyor merak etme 👮‍♂️ @baykaoss bilgi alabilirsin <<")
+print(">> Bot çalışıyor merak etme 👮‍♂️ @UtagOnlineBot bilgi alabilirsin <<")
 client.run_until_disconnected()
