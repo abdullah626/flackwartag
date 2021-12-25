@@ -23,31 +23,19 @@ async def cancel(event):
   anlik_calisan.remove(event.chat_id)
 
 
-@client.on(events.NewMessage(pattern="^/start$"))
-async def start(event):
-  await event.reply("Hi I'm @UtagOnlineBot I was created to search all contacts in chat.\nMerhaba! Grubunuzdaki Kullanıcıları Etiketlemek İçin Yaratıldım. Beni Grubunuza Ekleyin ve Gerisini Bana Bırakın.",
-                    buttons=(
-                      [Button.url('➕Beni Bir Gruba Ekle➕', 'http://t.me/UtagOnlineBot?startgroup=a'),],
-                      [ Button.url('🔥Grup', 'https://t.me/sohbet_onlinee'),],
-                      [ Button.url('🔥sahip ', 'https://t.me/Ruhsuzzadaam'),],
-                      [  Button.url('🔥Music botu ', 'https://t.me/onlineemusicbot'),],
-                     [ Button.url('📣resmi kanal', 'https://t.me/uye_ekleme_hizmeti')]
-                    ),
-                    link_preview=False
-                   )
 @client.on(events.NewMessage(pattern="^/help$"))
 async def help(event):
   helptext = """Nasıl Çalışırım:
 
 /utag <Mesajınız> - kullanıcıları etiketlerim.
 /atag <Mesajınız> - Sadece yöneticileri etiketlerim.
-/cancel@UtagOnlineBot - Etiket işlemini iptal ederim.
+/cancel - Etiket işlemini iptal ederim.
 ❕ Yalnızca yöneticileri bu komutları kullanabilir."""
   await event.reply(helptext,
                     buttons=(
-                      [Button.url('➕Beni Bir Gruba Ekle➕', 'https://t.me/UtagOnlineBot?startgroup=a'),
-                       Button.url('🎛️Grup', 'https://t.me/sohbet_onlinee'),
-                      Button.url('📣resmi kanal', 'https://t.me/uye_ekleme_hizmeti')]
+                      [Button.url('➕Beni Bir Gruba Ekle➕', 'https://t.me/Fathervideobot?startgroup=a'),
+                       Button.url('🎛️Grup', 'https://t.me/VirtuallMafia'),
+                      Button.url('📣resmi kanal', 'https://t.me/UtagOnline')]
                     ),
                     link_preview=False
                    )
