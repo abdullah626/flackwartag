@@ -43,7 +43,7 @@ async def help(event):
 
 @client.on(events.NewMessage(pattern="^/tag$"))
 async def tag(event):
-    help = """Etiketleme işlemi""""
+    help = """Etiketleme işlemi"""
     await event.reply(help, 
                       buttons=(
                       [
