@@ -51,7 +51,7 @@ async def tag(event):
                     link_preview=False)
 
 
-@client.on(events.callbackquery.CallbackQery(data="tag"))
+@client.on(events.callbackquery.CallbackQuery(data="tag"))
 async def tektag(event):
   global gece_tag
   if event.is_private:
