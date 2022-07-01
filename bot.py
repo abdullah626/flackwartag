@@ -43,7 +43,7 @@ async def help(event):
 
 @client.on(events.NewMessage(pattern="^/tag$"))
 async def tag(event):
-    await event.edit( buttons=(
+    await event.reply( buttons=(
                       [
                       Button.inline("◀️ Geri", data="tag")
                       ]
@@ -52,7 +52,7 @@ async def tag(event):
 
 
 @client.on(events.callbackquery.CallbackQuery(data="tag"))
-async def tektag(event):
+async def handler(event):
   global gece_tag
   if event.is_private:
     return await event.respond(f"{noqrup}")
